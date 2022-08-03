@@ -16,3 +16,19 @@ After completing this module, you'll be able to create a unified deployment work
 3- Publishes a database schema to an Azure SQL database
 4- Adds sample data to an Azure SQL database and an Azure Storage blob container
 5- You'll also know how to effectively use workflow artifacts, Bicep outputs, and workflow variables to coordinate the different parts of your workflow.
+
+The control plane and the data plane
+Many Azure resources provide two different planes for access. The control plane deploys and configures the resource. The data plane enables you to access the resource's functionality.
+
+When you create and deploy Bicep files, you interact with the control plane. In Azure, the control plane is Azure Resource Manager. You use Resource Manager to define the configuration of each of your resources.
+
+But your workflow often needs to do more than just interact with the control plane. For example, you might need to:
+
+Upload a blob to a storage account.
+Modify a database schema.
+Make an API call to a third-party service.
+Trigger the update of a machine learning model.
+Deploy a website to an Azure App Service app.
+Deploy software to a virtual machine.
+Register a DNS entry with a third-party provider.
+When you consider an end-to-end workflow, you ordinarily need to deploy your Azure resources and then perform a series of operations against the data planes of those resources. Sometimes, these operations are called the last mile of the deployment, because you're performing most of the deployment by using the control plane, and only a small amount of configuration remains.
