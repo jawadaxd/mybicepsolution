@@ -50,5 +50,8 @@ Workflow actions and scripts give you flexibility and control. They also enable 
 
 Your deployment workflow
 In the next exercise, you'll update your deployment workflow to add new jobs to build your website's application and deploy it to each environment:
-![image](https://user-images.githubusercontent.com/40992722/182663244-c13fc225-e656-48c9-8e6a-400d5d04055e.png)
+
+
+![image](https://user-images.githubusercontent.com/40992722/182663321-da3768eb-a712-4ee1-a47a-4c0d6f98c434.png)
+
 
