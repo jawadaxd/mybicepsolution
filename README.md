@@ -47,3 +47,8 @@ Deployment scripts are good when you need to run a simple script within your dep
 You can also run your own logic from within a deployment workflow. GitHub Actions provides a rich ecosystem of actions for common things you need to do. If you can't find an action that meets your needs, you can use a script to run your own Bash or PowerShell code. Workflow actions and scripts run from your workflow's runner. You often need to authenticate the action or script to the data plane of the service you're using, and the way that you do this depends on the service.
 
 Workflow actions and scripts give you flexibility and control. They also enable you to access workflow artifacts, which you'll learn about soon. In this module, we focus on workflow actions. We link to more information about Resource Manager deployment scripts on the Summary page at the end of the module.
+
+Your deployment workflow
+In the next exercise, you'll update your deployment workflow to add new jobs to build your website's application and deploy it to each environment:
+![image](https://user-images.githubusercontent.com/40992722/182663244-c13fc225-e656-48c9-8e6a-400d5d04055e.png)
+
