@@ -54,5 +54,5 @@ In the next exercise, you'll update your deployment workflow to add new jobs to 
 
 ![image](https://user-images.githubusercontent.com/40992722/182663468-d9813002-6e2f-45e2-b688-bae0cfbd9c19.png)
 
-
+https://docs.microsoft.com/en-us/learn/modules/manage-end-end-deployment-scenarios-using-bicep-github-actions/3-configure-applications-virtual-machines
 
