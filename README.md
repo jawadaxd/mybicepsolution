@@ -7,3 +7,12 @@ Suppose you're responsible for deploying and configuring the Azure infrastructur
 Architecture diagram illustrating the solution's Azure components, with the workflow deploying the Bicep file and performing the additional steps on the resources.
 
 ![image](https://user-images.githubusercontent.com/40992722/182643044-0f58dc06-028e-4a12-81c4-a4d6ef947be3.png)
+
+What is the main goal?
+After completing this module, you'll be able to create a unified deployment workflow that:
+
+Provisions Azure resources by using a Bicep file
+Deploys an application to Azure App Service
+Publishes a database schema to an Azure SQL database
+Adds sample data to an Azure SQL database and an Azure Storage blob container
+You'll also know how to effectively use workflow artifacts, Bicep outputs, and workflow variables to coordinate the different parts of your workflow.
