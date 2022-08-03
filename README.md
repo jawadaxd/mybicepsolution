@@ -11,8 +11,8 @@ Architecture diagram illustrating the solution's Azure components, with the work
 What is the main goal?
 After completing this module, you'll be able to create a unified deployment workflow that:
 
-Provisions Azure resources by using a Bicep file
-Deploys an application to Azure App Service
-Publishes a database schema to an Azure SQL database
-Adds sample data to an Azure SQL database and an Azure Storage blob container
-You'll also know how to effectively use workflow artifacts, Bicep outputs, and workflow variables to coordinate the different parts of your workflow.
+1- Provisions Azure resources by using a Bicep file
+2- Deploys an application to Azure App Service
+3- Publishes a database schema to an Azure SQL database
+4- Adds sample data to an Azure SQL database and an Azure Storage blob container
+5- You'll also know how to effectively use workflow artifacts, Bicep outputs, and workflow variables to coordinate the different parts of your workflow.
