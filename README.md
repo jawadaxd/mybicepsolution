@@ -52,6 +52,7 @@ Your deployment workflow
 In the next exercise, you'll update your deployment workflow to add new jobs to build your website's application and deploy it to each environment:
 
 
-![image](https://user-images.githubusercontent.com/40992722/182663321-da3768eb-a712-4ee1-a47a-4c0d6f98c434.png)
+![image](https://user-images.githubusercontent.com/40992722/182663468-d9813002-6e2f-45e2-b688-bae0cfbd9c19.png)
+
 
 
