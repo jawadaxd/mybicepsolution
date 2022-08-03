@@ -1,4 +1,4 @@
-# bicepsolution
+# Bicepsolution
 End-to-end deployment scenario for Bicep and github actions solution
 
 Example scenario
