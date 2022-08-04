@@ -96,7 +96,11 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ needs.deploy.outputs.appServiceAppName }}
-          package: .
+<<<<<<< HEAD
+          package: python-app
+=======
+          package: pyhton-app
+>>>>>>> b3477a1de8f08176c1fe9252ee0a0000efa19232
 
   smoke-test:
     runs-on: ubuntu-latest
