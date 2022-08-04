@@ -96,7 +96,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ needs.deploy.outputs.appServiceAppName }}
-          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+          package: ./python-app.zip
 
   smoke-test:
     runs-on: ubuntu-latest
