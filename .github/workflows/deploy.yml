@@ -95,7 +95,6 @@ jobs:
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
         with:
-        resourceGroupName: ${{ inputs.resourceGroupName }}
         app-name: ${{ needs.deploy.outputs.appServiceAppName }}
 
   smoke-test:
