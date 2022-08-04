@@ -96,7 +96,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ needs.deploy.outputs.appServiceAppName }}
-          working-directory: '.'
+          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
 
   smoke-test:
     runs-on: ubuntu-latest
