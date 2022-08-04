@@ -95,7 +95,7 @@ jobs:
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
         with:
-        app-name: ${{ needs.deploy.outputs.appServiceAppName }}
+          app-name: ${{ needs.deploy.outputs.appServiceAppName }}
 
   smoke-test:
     runs-on: ubuntu-latest
