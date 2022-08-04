@@ -1,0 +1,12 @@
+- Completed till 18 of 24 videos on MS django beginners.
+https://www.youtube.com/watch?v=L5zrmNQOV7k&t=6s
+
+What I learned:
+- How to create models/tables and fields/columns in database. Make migrations.
+- How to create views and urls in app folder and register them in urls.py in project.
+- How to use basic template inheritence using base.html.
+- Created static foler but have not used which containes images and css files for website.
+
+What next:
+- Look more into template inheritence and how to build base.html for your website. Also use static folder for images and css files.
+- Continue with 18-22 of 24 video on youtube(django playlist).  
