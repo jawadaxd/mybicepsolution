@@ -96,6 +96,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ needs.deploy.outputs.appServiceAppName }}
+          working-directory: '.'
 
   smoke-test:
     runs-on: ubuntu-latest
