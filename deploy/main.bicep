@@ -15,6 +15,7 @@ param resourceNameSuffix string = uniqueString(resourceGroup().id)
 var appServiceAppName = 'toy-website-${resourceNameSuffix}'
 var appServicePlanName = 'toy-website-plan'
 var toyManualsStorageAccountName = 'toyweb${resourceNameSuffix}'
+var storageAccountImagesBlobContainerName = 'toyimages'
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
@@ -77,6 +78,18 @@ resource appServiceApp 'Microsoft.Web/sites@2020-06-01' = {
           name: 'ToyManualsStorageAccountConnectionString'
           value: toyManualsStorageAccountConnectionString
         }
+        {
+          name: 'StorageAccountName'
+          value: toyManualsStorageAccount.name
+        }
+        {
+          name: 'StorageAccountBlobEndpoint'
+          value: toyManualsStorageAccount.properties.primaryEndpoints.blob
+        }
+        {
+          name: 'StorageAccountImagesContainerName'
+          value: toyManualsStorageAccount::blobService::storageAccountImagesBlobContainer.name
+        }
       ]
     }
   }
@@ -87,7 +100,22 @@ resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-02-01'
   location: location
   kind: 'StorageV2'
   sku: environmentConfigurationMap[environmentType].toyManualsStorageAccount.sku
+
+  resource blobService 'blobServices' = {
+    name: 'default'
+
+    resource storageAccountImagesBlobContainer 'containers' = {
+      name: storageAccountImagesBlobContainerName
+
+      properties: {
+        publicAccess: 'Blob'
+      }
+    }
+  }
 }
+
 
 output appServiceAppName string = appServiceApp.name
 output appServiceAppHostName string = appServiceApp.properties.defaultHostName
+output toyManualsStorageAccount string = toyManualsStorageAccount.name
+output storageAccountImagesBlobContainerName string = toyManualsStorageAccount::blobService::storageAccountImagesBlobContainer.name
