@@ -56,7 +56,10 @@ var toyManualsStorageAccountConnectionString = 'DefaultEndpointsProtocol=https;A
 resource appServicePlan 'Microsoft.Web/serverFarms@2020-06-01' = {
   name: appServicePlanName
   location: location
-  kind: 'Linux'
+  properties: {
+    reserved: true
+  }
+  kind: 'linux'
   sku: environmentConfigurationMap[environmentType].appServicePlan.sku
 }
 
