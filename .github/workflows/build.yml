@@ -29,10 +29,17 @@ jobs:
 #    - name: Run tests   // Come back to it later
 #      run: python manage.py test
     
+    - name: Zip publishable website
+      run: |
+        zip -r publish.zip .
+      working-directory: ./src/
+
+
     - name: Upload artifact for deployment jobs
       uses: actions/upload-artifact@v2
       with:
         name: python-app
-        path: ./src/
+        path: ./src/publish.zip
 #          . 
 #          !venv/
+
