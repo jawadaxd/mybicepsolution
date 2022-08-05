@@ -67,7 +67,6 @@ resource appServiceApp 'Microsoft.Web/sites@2020-06-01' = {
     serverFarmId: appServicePlan.id
     httpsOnly: true
     siteConfig: {
-//      pythonVersion: '3.9'
       linuxFxVersion: 'python|3.9'
       alwaysOn: environmentConfigurationMap[environmentType].appServiceApp.alwaysOn
       appSettings: [
