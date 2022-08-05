@@ -87,11 +87,11 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
     
-#      - name: Disable static collection and set migration command on App Service
-#        uses: Azure/appservice-settings@v1
-#        with:  
-#          app-name: ${{ env.WEBAPP_NAME }}
-#          app-settings-json: '[{ "name": "DISABLE_COLLECTSTATIC", "value": "true" }, { "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "true" }, { "name": "DJANGO_ENV", "value": "production"}]'
+      - name: Disable static collection and set migration command on App Service
+        uses: Azure/appservice-settings@v1
+        with:  
+          app-name: ${{ needs.deploy.outputs.appServiceAppName }}
+          app-settings-json: '[{ "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "true" }]'
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
