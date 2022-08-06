@@ -122,7 +122,7 @@ resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-09-01'
 //}
 
 
-var flexibleServers_pgserver018_name = (environmentType == 'prod') ? 'pgserver-PROD' : 'pgserver-NON-PROD'
+var flexibleServers_pgserver018_name = (environmentType == 'prod') ? 'pgserver017axd-prod' : 'pgserver018axd-test'
 @secure()
 param DBadministratorLogin string 
 @secure()
