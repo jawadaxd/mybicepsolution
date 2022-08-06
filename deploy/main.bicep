@@ -116,6 +116,12 @@ resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-09-01'
 
 // PostgreSQL DB ------
 
+//param keyvaultname string = 'jawadskeyvault'
+//resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' existing = {
+//  name: keyvaultname
+//}
+
+
 param flexibleServers_pgserver018_name string = 'pgserver018'
 @secure()
 param DBadministratorLogin string 
