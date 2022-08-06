@@ -139,6 +139,25 @@ resource flexibleServers_pgserver018_name_resource 'Microsoft.DBforPostgreSQL/fl
     version: '12'
     administratorLogin: DBadministratorLogin
     administratorLoginPassword: DBadministratorLoginPassword
+    availabilityZone: '1'
+    storage: {
+      storageSizeGB: 32
+    }
+    backup: {
+      backupRetentionDays: 7
+      geoRedundantBackup: 'Disabled'
+    }
+    network: {
+    }
+    highAvailability: {
+      mode: 'Disabled'
+    }
+    maintenanceWindow: {
+      customWindow: 'Disabled'
+      dayOfWeek: 0
+      startHour: 0
+      startMinute: 0
+    }
   }
 }
 
