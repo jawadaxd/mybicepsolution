@@ -181,5 +181,3 @@ output appServiceAppName string = appServiceApp.name
 output appServiceAppHostName string = appServiceApp.properties.defaultHostName
 output toyManualsStorageAccount string = toyManualsStorageAccount.name
 output storageAccountImagesBlobContainerName string = toyManualsStorageAccount::blobService::storageAccountImagesBlobContainer.name
-
-
