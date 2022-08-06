@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "DBadministratorLogin": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/63e18d69-5850-419c-a3d3-463338b11639/resourceGroups/bicep/providers/Microsoft.KeyVault/vaults/jawadskeyvault"
+                },
+                "secretName": "DBadministratorLogin"
+            }
+        },
+        "DBadministratorLoginPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/63e18d69-5850-419c-a3d3-463338b11639/resourceGroups/bicep/providers/Microsoft.KeyVault/vaults/jawadskeyvault"
+                },
+                "secretName": "DBadministratorLoginPassword"
+            }
+        }
+    }
+}

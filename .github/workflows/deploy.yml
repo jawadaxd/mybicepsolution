@@ -32,8 +32,9 @@ jobs:
        with:
          deploymentName: ${{ github.run_number }}
          resourceGroupName: ${{ inputs.resourceGroupName }}
-         template: ./deploy/main.bicep
+         template: ./deploy/main.bicep 
          parameters: >
+           ./deploy/parameters.json
            environmentType=${{ inputs.environmentType }}
          deploymentMode: Validate
      - if: inputs.environmentType == 'prod'
@@ -44,6 +45,7 @@ jobs:
          resourceGroupName: ${{ inputs.resourceGroupName }}
          template: ./deploy/main.bicep
          parameters: >
+           ./deploy/parameters.json
            environmentType=${{ inputs.environmentType }}
          additionalArguments: --what-if
  
@@ -69,6 +71,7 @@ jobs:
         resourceGroupName: ${{ inputs.resourceGroupName }}
         template: ./deploy/main.bicep
         parameters: >
+           ./deploy/parameters.json
            environmentType=${{ inputs.environmentType }}
   
   deploy-website:
