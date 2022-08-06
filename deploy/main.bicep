@@ -8,6 +8,9 @@ param location string = resourceGroup().location
 ])
 param environmentType string
 
+@description('Name for postgreSQL')
+param dbname string = 'sample-testdb'
+
 @description('A unique suffix to add to resource names that need to be globally unique.')
 @maxLength(13)
 param resourceNameSuffix string = uniqueString(resourceGroup().id)
@@ -54,7 +57,7 @@ var environmentConfigurationMap = {
 }
 var toyManualsStorageAccountConnectionString = 'DefaultEndpointsProtocol=https;AccountName=${toyManualsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${toyManualsStorageAccount.listKeys().keys[0].value}'
 
-resource appServicePlan 'Microsoft.Web/serverFarms@2020-06-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: appServicePlanName
   location: location
   properties: {
@@ -64,7 +67,7 @@ resource appServicePlan 'Microsoft.Web/serverFarms@2020-06-01' = {
   sku: environmentConfigurationMap[environmentType].appServicePlan.sku
 }
 
-resource appServiceApp 'Microsoft.Web/sites@2020-06-01' = {
+resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
   name: appServiceAppName
   location: location
   properties: {
@@ -95,7 +98,7 @@ resource appServiceApp 'Microsoft.Web/sites@2020-06-01' = {
   }
 }
 
-resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
+resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
   name: toyManualsStorageAccountName
   location: location
   kind: 'StorageV2'
@@ -111,6 +114,22 @@ resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-02-01'
         publicAccess: 'Blob'
       }
     }
+  }
+}
+
+resource pgsql 'Microsoft.DBforPostgreSQL/servers@2017-12-01' = {
+  name: dbname
+  location: location
+  sku: {
+    name: 'B-Gen5-2'
+    tier: 'Basic'
+    family: 'Gen5'
+    capacity: 2
+  }
+  properties: {
+    createMode: 'Default'
+    administratorLogin: 'adminuser'
+    administratorLoginPassword: 'adminp@ssw0rd'
   }
 }
 
