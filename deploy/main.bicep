@@ -136,6 +136,7 @@ resource flexibleServers_pgserver018_name_resource 'Microsoft.DBforPostgreSQL/fl
     tier: 'Burstable'
   }
   properties: { 
+    version: '12'
     administratorLogin: DBadministratorLogin
     administratorLoginPassword: DBadministratorLoginPassword
   }
