@@ -198,8 +198,9 @@ resource flexibleServers_pgserver018_name_ClientIPAddress_2022_8_6_12_2_21 'Micr
   }
 }
 
-//output pgServerFullyQualifiedDomainName string = flexibleServers_pgserver018_name.fullyQualifiedDomainName
+output pgServerFullyQualifiedDomainNamestring string = flexibleServers_pgserver018_name_resource.properties.fullyQualifiedDomainName
 output pgDatabaseName string = flexibleServers_pgserver018_name_pgdb1.name
+
 
 // Postgre DB End-----------
 
