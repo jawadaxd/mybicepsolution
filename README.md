@@ -1,4 +1,8 @@
-# cicdactions2
+# My bicep django-app "Azelian (azelian.com)" development workflow
+What works:
+It will deploy azure app, app service plan, postgres db and storage account in test env. and prod env.
+There is no integration between postgresDB and App yet.
+-------
 
 This repo contains code for REUSABLE WORKFLOWS with multiple github actions ENVIRONMENTS(Test, Production), deployed in two resource groups(mywebsite, mywebsiteTest)
 
