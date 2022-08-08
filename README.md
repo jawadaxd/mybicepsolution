@@ -2,6 +2,7 @@
 What works:
 It will deploy azure app, app service plan, postgres db and storage account in test env. and prod env.
 There is no integration between postgresDB and App yet.
+Keyavult needs to be provided manually with DB credentials(username and password). Parameters.json file is where therse parameters are called.
 -------
 
 This repo contains code for REUSABLE WORKFLOWS with multiple github actions ENVIRONMENTS(Test, Production), deployed in two resource groups(mywebsite, mywebsiteTest)
